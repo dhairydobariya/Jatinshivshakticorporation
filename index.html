@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jatinshivshakticorporation — Electrical Contractors</title>
+  <meta name="description" content="Jatinshivshakticorporation — Tender-based electrical contractors specializing in underground electrical work, IT-line transfer and maintenance." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Color tokens: primary teal, accent amber */
+    :root{ --primary:#0f766e; --accent:#d97706; }
+
+    .hero-overlay { background: linear-gradient(90deg, rgba(2,6,23,0.45), rgba(2,6,23,0.12)); }
+
+    /* subtle entrance animations */
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(12px);} to { opacity:1; transform:translateY(0);} }
+    .fade-up { animation: fadeUp 700ms ease-out both; }
+
+    @keyframes floaty { 0% { transform: translateY(0);} 50% { transform: translateY(-6px);} 100% { transform: translateY(0);} }
+    .floaty { animation: floaty 5s ease-in-out infinite; }
+
+    /* testimonial slide animations */
+    .slide-enter { animation: slideIn 600ms ease-out both; }
+    .slide-exit { animation: slideOut 600ms ease-in both; }
+    @keyframes slideIn { from { opacity:0; transform: translateY(12px);} to { opacity:1; transform:translateY(0);} }
+    @keyframes slideOut { from { opacity:1; transform: translateY(0);} to { opacity:0; transform:translateY(-8px);} }
+
+    /* glass nav backdrop */
+    .glass { background: rgba(255,255,255,0.75); backdrop-filter: blur(6px); }
+
+    /* small focus styles for accessibility */
+    a:focus, button:focus, input:focus { outline: 3px solid rgba(15,118,110,0.18); outline-offset: 2px; }
+  </style>
+</head>
+<body class="antialiased text-gray-800 bg-gradient-to-b from-white via-slate-50 to-slate-100">
+  <!-- NAV -->
+  <header class="sticky top-4 z-50 px-4">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center justify-between p-3 rounded-xl glass shadow-md">
+        <a href="#" class="flex items-center gap-3">
+          <div class="w-12 h-12 rounded-lg bg-[var(--primary)] flex items-center justify-center text-white font-bold shadow">JS</div>
+          <div>
+            <div class="text-lg font-extrabold text-slate-800">Jatinshivshakticorporation</div>
+            <div class="text-xs text-slate-500">Electrical Contractors • Tender Projects</div>
+          </div>
+        </a>
+
+        <nav class="hidden md:flex items-center gap-6 text-sm">
+          <a href="#services" class="hover:text-[var(--primary)] transition">Services</a>
+          <a href="#portfolio" class="hover:text-[var(--primary)] transition">Portfolio</a>
+          <a href="#about" class="hover:text-[var(--primary)] transition">About</a>
+          <a href="#mission" class="hover:text-[var(--primary)] transition">Mission</a>
+          <a href="#faq" class="hover:text-[var(--primary)] transition">FAQ</a>
+          <a href="#testimonials" class="hover:text-[var(--primary)] transition">Clients</a>
+          <a href="#contact" class="text-white bg-[var(--primary)] px-4 py-2 rounded-md shadow hover:opacity-95">Contact</a>
+        </nav>
+
+        <div class="md:hidden">
+          <button id="mobile-btn" class="p-2 rounded-md border">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-700" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 5h14M3 10h14M3 15h14" clip-rule="evenodd" /></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- mobile menu -->
+      <div id="mobile-menu" class="md:hidden mt-3 hidden">
+        <div class="flex flex-col gap-2 bg-white p-3 rounded-lg shadow">
+          <a href="#services" class="block p-2 rounded hover:bg-slate-50">Services</a>
+          <a href="#portfolio" class="block p-2 rounded hover:bg-slate-50">Portfolio</a>
+          <a href="#about" class="block p-2 rounded hover:bg-slate-50">About</a>
+          <a href="#mission" class="block p-2 rounded hover:bg-slate-50">Mission</a>
+          <a href="#faq" class="block p-2 rounded hover:bg-slate-50">FAQ</a>
+          <a href="#testimonials" class="block p-2 rounded hover:bg-slate-50">Clients</a>
+          <a href="#contact" class="block p-2 rounded text-[var(--primary)] font-medium">Contact</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="relative mt-8">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="relative rounded-xl overflow-hidden shadow-lg">
+        <img src="images/350a65e6-9401-4ce8-b259-7183575926d5.png" alt="Worksite image" class="w-full h-80 sm:h-96 object-cover brightness-90" />
+        <div class="absolute inset-0 hero-overlay"></div>
+
+        <div class="absolute inset-0 flex items-center">
+          <div class="max-w-4xl mx-auto px-6 sm:px-8">
+            <div class="text-white max-w-2xl">
+              <h1 class="text-3xl sm:text-5xl font-extrabold drop-shadow-lg fade-up" style="animation-delay:120ms">Reliable Electrical Contracting & Underground IT‑Line Services</h1>
+              <p class="mt-3 text-sm sm:text-lg opacity-95 drop-shadow-sm fade-up" style="animation-delay:260ms">Tender-based electrical contractor with expertise in underground installations, IT-line transfer and dependable maintenance. Trusted, compliant and fast.</p>
+
+              <div class="mt-6 flex gap-3 fade-up" style="animation-delay:380ms">
+                <a href="#contact" class="inline-flex items-center gap-2 bg-[var(--primary)] hover:scale-105 transform transition text-white px-5 py-3 rounded-lg shadow-lg">Get a Quote
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                </a>
+                <a href="#portfolio" class="inline-flex items-center gap-2 bg-white/20 border border-white text-white px-4 py-3 rounded-lg hover:translate-y-[-3px] transition">View Projects</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="hidden lg:block absolute right-8 bottom-6 w-44 h-44 rounded-xl overflow-hidden shadow-xl floaty">
+            <img src="images/download (1).jpeg" alt="Team snapshot" class="w-full h-full object-cover" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="py-14">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <h2 class="text-2xl font-bold text-slate-800">Our Services</h2>
+        <p class="mt-2 text-slate-500">Specialized electrical contracting services for tender projects, commercial and industrial needs.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- service card -->
+        <div class="p-6 rounded-xl bg-white shadow hover:shadow-lg transform hover:-translate-y-2 transition">
+          <div class="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-[var(--primary)] text-white font-semibold">⚡</div>
+          <h3 class="mt-4 font-semibold text-lg">Underground Electrical Work</h3>
+          <p class="mt-2 text-slate-600 text-sm">Design, installation and safe laying of underground power and distribution systems for commercial sites.</p>
+        </div>
+
+        <div class="p-6 rounded-xl bg-white shadow hover:shadow-lg transform hover:-translate-y-2 transition">
+          <div class="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-[var(--primary)] text-white font-semibold">💻</div>
+          <h3 class="mt-4 font-semibold text-lg">IT‑Line Transfer & Wiring</h3>
+          <p class="mt-2 text-slate-600 text-sm">IT cable relocation, structured cabling and transfer services with minimal downtime and careful planning.</p>
+        </div>
+
+        <div class="p-6 rounded-xl bg-white shadow hover:shadow-lg transform hover:-translate-y-2 transition">
+          <div class="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-[var(--primary)] text-white font-semibold">🛠️</div>
+          <h3 class="mt-4 font-semibold text-lg">Maintenance & Repair</h3>
+          <p class="mt-2 text-slate-600 text-sm">Scheduled and emergency maintenance — troubleshooting, repair and preventive upkeep to keep systems running.</p>
+        </div>
+
+        <div class="p-6 rounded-xl bg-white shadow hover:shadow-lg transform hover:-translate-y-2 transition">
+          <div class="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-[var(--primary)] text-white font-semibold">📄</div>
+          <h3 class="mt-4 font-semibold text-lg">Tender-Based Contracting</h3>
+          <p class="mt-2 text-slate-600 text-sm">Experienced in working on tendered projects with on-time delivery and adherence to specifications.</p>
+        </div>
+
+        <div class="p-6 rounded-xl bg-white shadow hover:shadow-lg transform hover:-translate-y-2 transition">
+          <div class="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-[var(--primary)] text-white font-semibold">🔎</div>
+          <h3 class="mt-4 font-semibold text-lg">Site Survey & Planning</h3>
+          <p class="mt-2 text-slate-600 text-sm">Comprehensive site surveys and project planning to ensure accurate scope and cost estimation.</p>
+        </div>
+
+        <div class="p-6 rounded-xl bg-white shadow hover:shadow-lg transform hover:-translate-y-2 transition">
+          <div class="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-[var(--primary)] text-white font-semibold">✔️</div>
+          <h3 class="mt-4 font-semibold text-lg">Safety Compliance</h3>
+          <p class="mt-2 text-slate-600 text-sm">Work performed to standard safety protocols, ensuring compliant and secure installations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="bg-slate-50 py-14">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        <div>
+          <h2 class="text-2xl font-bold text-slate-800">About Jatinshivshakticorporation</h2>
+          <p class="mt-4 text-slate-600">Founded with a focus on technical excellence, Jatinshivshakticorporation offers tender-based electrical contracting services. With 2 years of hands-on experience, our team specializes in underground installations, IT-line transfers and maintenance work for commercial and industrial clients.</p>
+          <ul class="mt-4 space-y-2 text-slate-600">
+            <li class="flex items-start gap-3"><span class="text-[var(--primary)] font-semibold">•</span><span>Quick and professional execution</span></li>
+            <li class="flex items-start gap-3"><span class="text-[var(--primary)] font-semibold">•</span><span>Safety-first approach and compliance</span></li>
+            <li class="flex items-start gap-3"><span class="text-[var(--primary)] font-semibold">•</span><span>Transparent costing for tender projects</span></li>
+          </ul>
+        </div>
+        <div class="rounded-xl overflow-hidden shadow-lg">
+          <img src="images/download (1).jpeg" alt="Team at work" class="w-full h-64 object-cover" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION / CORE VALUES -->
+  <section id="mission" class="py-14">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+        <div class="lg:col-span-2">
+          <h2 class="text-2xl font-bold text-slate-800">Our Mission & Core Values</h2>
+          <p class="mt-4 text-slate-600">At Jatinshivshakticorporation our mission is to deliver safe, reliable and cost-effective electrical solutions for commercial and industrial projects. We focus on quality workmanship, transparent tender processes and long-term maintenance support.</p>
+
+          <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="p-4 rounded-lg bg-white shadow">
+              <h4 class="font-semibold text-[var(--primary)]">Safety First</h4>
+              <p class="mt-2 text-sm text-slate-600">We follow strict safety protocols and ensure every site meets compliance standards.</p>
+            </div>
+            <div class="p-4 rounded-lg bg-white shadow">
+              <h4 class="font-semibold text-[var(--primary)]">Integrity & Transparency</h4>
+              <p class="mt-2 text-sm text-slate-600">Clear costing and honest communication throughout tender and project execution.</p>
+            </div>
+            <div class="p-4 rounded-lg bg-white shadow">
+              <h4 class="font-semibold text-[var(--primary)]">Technical Excellence</h4>
+              <p class="mt-2 text-sm text-slate-600">We use best-practice methodologies and experienced staff to ensure quality outcomes.</p>
+            </div>
+            <div class="p-4 rounded-lg bg-white shadow">
+              <h4 class="font-semibold text-[var(--primary)]">Client-Centric Service</h4>
+              <p class="mt-2 text-sm text-slate-600">We prioritize client timelines and maintain open channels for post-project support.</p>
+            </div>
+          </div>
+        </div>
+        <div class="rounded-xl overflow-hidden shadow p-6 bg-white">
+          <h3 class="text-lg font-semibold text-slate-800">Quick Facts</h3>
+          <ul class="mt-4 space-y-3 text-sm text-slate-700">
+            <li><strong>Experience:</strong> 2+ years</li>
+            <li><strong>Projects:</strong> 20+ (placeholder)</li>
+            <li><strong>Response Time:</strong> 24–48 hours</li>
+            <li><strong>Service Area:</strong> Cityname & surrounding industrial zones</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO / GALLERY -->
+  <section id="portfolio" class="py-14">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-8">
+        <h2 class="text-2xl font-bold text-slate-800">Project Gallery</h2>
+        <p class="mt-2 text-slate-500">Real images from our worksites. Click to enlarge.</p>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <a href="images/gallery-1.jpeg" class="block overflow-hidden rounded-xl shadow">
+          <img src="images/gallery-1.jpeg" alt="Worksite 1" class="w-full h-40 object-cover transform hover:scale-105 transition" />
+        </a>
+        <a href="images/gallery-2.jpeg" class="block overflow-hidden rounded-xl shadow">
+          <img src="images/gallery-2.jpeg" alt="Worksite 2" class="w-full h-40 object-cover transform hover:scale-105 transition" />
+        </a>
+        <a href="images/gallery-3.jpeg" class="block overflow-hidden rounded-xl shadow">
+          <img src="images/gallery-3.jpeg" alt="Worksite 3" class="w-full h-40 object-cover transform hover:scale-105 transition" />
+        </a>
+        <a href="images/gallery-4.jpeg" class="block overflow-hidden rounded-xl shadow">
+          <img src="images/gallery-4.jpeg" alt="Worksite 4" class="w-full h-40 object-cover transform hover:scale-105 transition" />
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS (carousel style) -->
+  <section id="testimonials" class="bg-gradient-to-r from-white via-slate-50 to-white py-14">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-8">
+        <h2 class="text-2xl font-bold text-slate-800">What Clients Say</h2>
+        <p class="mt-2 text-slate-500">Real feedback from project stakeholders and site supervisors.</p>
+      </div>
+
+      <div class="relative">
+        <div id="testimonial-wrap" class="min-h-[220px]">
+          <!-- slides inserted by JS -->
+        </div>
+
+        <div class="mt-6 flex justify-center gap-3">
+          <button id="prev" class="px-3 py-2 rounded bg-white shadow">◀</button>
+          <button id="next" class="px-3 py-2 rounded bg-white shadow">▶</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-14">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-8">
+        <h2 class="text-2xl font-bold text-slate-800">Frequently Asked Questions</h2>
+        <p class="mt-2 text-slate-500">Answers to common questions about our services and tender work.</p>
+      </div>
+
+      <div class="max-w-3xl mx-auto space-y-3">
+        <button class="w-full text-left p-4 bg-white rounded shadow flex justify-between items-center faq-toggle">
+          <span class="font-medium">What areas do you serve?</span>
+          <span class="text-[var(--primary)]">+</span>
+        </button>
+        <div class="faq-content p-4 bg-white rounded shadow hidden">We operate in Cityname and nearby industrial zones. For larger tender projects we can mobilize to other regions as required.</div>
+
+        <button class="w-full text-left p-4 bg-white rounded shadow flex justify-between items-center faq-toggle">
+          <span class="font-medium">Do you handle government tenders?</span>
+          <span class="text-[var(--primary)]">+</span>
+        </button>
+        <div class="faq-content p-4 bg-white rounded shadow hidden">Yes — we prepare tender documentation and bid on tender-based electrical projects following client specifications and compliance requirements.</div>
+
+        <button class="w-full text-left p-4 bg-white rounded shadow flex justify-between items-center faq-toggle">
+          <span class="font-medium">What is your safety protocol?</span>
+          <span class="text-[var(--primary)]">+</span>
+        </button>
+        <div class="faq-content p-4 bg-white rounded shadow hidden">Safety is our top priority: site PPE, permit-to-work procedures, regular tool inspections, and compliance with local electrical safety standards.</div>
+
+        <button class="w-full text-left p-4 bg-white rounded shadow flex justify-between items-center faq-toggle">
+          <span class="font-medium">How long does a typical project take?</span>
+          <span class="text-[var(--primary)]">+</span>
+        </button>
+        <div class="faq-content p-4 bg-white rounded shadow hidden">Project duration varies by scope. After a site survey we provide a timeline in the proposal. Small maintenance jobs can be completed in 1–3 days; larger underground installs depend on site conditions.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-14">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div>
+          <h2 class="text-2xl font-bold text-slate-800">Get in Touch</h2>
+          <p class="mt-3 text-slate-500">For tenders, quotes or maintenance requests, reach out and we will respond quickly.</p>
+
+          <div class="mt-6 space-y-3">
+            <div class="flex items-center gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[var(--primary)]" viewBox="0 0 20 20" fill="currentColor"><path d="M2.003 5.884L10 10.882l7.997-4.998A2 2 0 0016.764 3H3.236a2 2 0 00-1.233 2.884z" /></svg>
+              <div>
+                <div class="text-sm text-slate-500">Email</div>
+                <div class="font-medium">info@jatinshivshakticorporation.example</div>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[var(--primary)]" viewBox="0 0 20 20" fill="currentColor"><path d="M2 3.5A1.5 1.5 0 013.5 2h13A1.5 1.5 0 0118 3.5v13a1.5 1.5 0 01-1.5 1.5h-13A1.5 1.5 0 012 16.5v-13zM6 6h8v2H6V6z" /></svg>
+              <div>
+                <div class="text-sm text-slate-500">Phone</div>
+                <div class="font-medium">+91 98765 43210 (dummy)</div>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[var(--primary)]" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.05 3.05A7 7 0 1116.95 14.95 7 7 0 015.05 3.05zM10 5.5a1 1 0 100 2 1 1 0 000-2z" clip-rule="evenodd" /></svg>
+              <div>
+                <div class="text-sm text-slate-500">Address</div>
+                <div class="font-medium">123 Industrial Area, Cityname, State (dummy)</div>
+              </div>
+            </div>
+
+            <div class="mt-4">
+              <div class="text-sm text-slate-500">Follow</div>
+              <div class="flex gap-3 mt-2">
+                <a href="#" class="text-[var(--primary)] text-sm">LinkedIn</a>
+                <a href="#" class="text-[var(--primary)] text-sm">Facebook</a>
+                <a href="#" class="text-[var(--primary)] text-sm">Instagram</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <form class="bg-white p-6 rounded-lg shadow-sm">
+            <div class="grid grid-cols-1 gap-4">
+              <input type="text" placeholder="Your name" class="w-full border px-3 py-2 rounded" />
+              <input type="email" placeholder="Email address" class="w-full border px-3 py-2 rounded" />
+              <input type="tel" placeholder="Phone" class="w-full border px-3 py-2 rounded" />
+              <select class="w-full border px-3 py-2 rounded">
+                <option>Service required</option>
+                <option>Underground Electrical Work</option>
+                <option>IT-Line Transfer</option>
+                <option>Maintenance / Repair</option>
+                <option>Tender Project</option>
+              </select>
+              <textarea placeholder="Brief project details" class="w-full border px-3 py-2 rounded h-28"></textarea>
+              <div class="flex justify-between items-center">
+                <button type="submit" class="bg-[var(--primary)] text-white px-4 py-2 rounded">Send Request</button>
+                <div class="text-sm text-slate-500">We reply within 2 business days</div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-900 text-white py-6 mt-8">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+      <div>
+        <div class="font-semibold">Jatinshivshakticorporation</div>
+        <div class="text-sm text-slate-400">Tender-based electrical contracting • Underground & IT-line services</div>
+      </div>
+      <div class="text-sm text-slate-400">© <span id="year"></span> Jatinshivshakticorporation. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    // small interactivity
+    document.getElementById('mobile-btn').addEventListener('click', function(){
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+    // set year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // FAQ accordion logic
+    document.querySelectorAll('.faq-toggle').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var content = this.nextElementSibling;
+        var open = !content.classList.contains('hidden');
+        // close all
+        document.querySelectorAll('.faq-content').forEach(function(c){ c.classList.add('hidden'); });
+        document.querySelectorAll('.faq-toggle span:last-child').forEach(function(s){ s.textContent = '+'; });
+        if(!open){
+          content.classList.remove('hidden');
+          this.querySelector('span:last-child').textContent = '−';
+        }
+      });
+    });
+
+    // Simple testimonial slider (vanilla JS)
+    const testimonials = [
+      { name: 'Ravi K.', title: 'Site Manager, ABC Infra', text: 'Jatinshivshakticorporation handled our underground cabling project professionally. The team followed safety standards and kept the timeline tight. Highly recommended for tender work.' },
+      { name: 'Meera S.', title: 'Facility Head, TechPark', text: 'Quick response for IT-line transfer during our office renovation. Minimal downtime and clear communication throughout the project.' },
+      { name: 'S. Patel', title: 'Procurement Officer, Metro Works', text: 'Reliable partner for tender projects — provided transparent costing and delivered per specification. The maintenance support after handover was a plus.' }
+    ];
+
+    let cur = 0;
+    const wrap = document.getElementById('testimonial-wrap');
+    function renderTestimonial(i){
+      wrap.innerHTML = '';
+      const t = testimonials[i];
+      const card = document.createElement('div');
+      card.className = 'p-6 bg-white rounded-xl shadow slide-enter';
+      card.innerHTML = `
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 rounded-full bg-[var(--primary)] text-white flex items-center justify-center font-semibold">${t.name.split(' ').map(n=>n[0]).join('').slice(0,2)}</div>
+          <div>
+            <div class="font-semibold">${t.name}</div>
+            <div class="text-xs text-slate-500">${t.title}</div>
+          </div>
+        </div>
+        <p class="mt-4 text-slate-700">${t.text}</p>
+      `;
+      wrap.appendChild(card);
+    }
+
+    function showNext(){
+      cur = (cur + 1) % testimonials.length; renderTestimonial(cur);
+    }
+    function showPrev(){
+      cur = (cur - 1 + testimonials.length) % testimonials.length; renderTestimonial(cur);
+    }
+
+    document.getElementById('next').addEventListener('click', showNext);
+    document.getElementById('prev').addEventListener('click', showPrev);
+
+    // initial
+    renderTestimonial(cur);
+    // auto-rotate
+    setInterval(showNext, 6000);
+  </script>
+</body>
+</html>
