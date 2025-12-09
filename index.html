@@ -7,10 +7,10 @@
   <meta name="description" content="Jatinshivshakticorporation — Tender-based electrical contractors specializing in underground electrical work, IT-line transfer and maintenance." />
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    /* Color tokens: primary teal, accent amber */
-    :root{ --primary:#0f766e; --accent:#d97706; }
+    /* Color tokens: logo red and dark (black) */
+    :root{ --primary:#c71c1c; --dark:#0f172a; }
 
-    .hero-overlay { background: linear-gradient(90deg, rgba(2,6,23,0.45), rgba(2,6,23,0.12)); }
+    .hero-overlay { background: linear-gradient(90deg, rgba(15,23,42,0.45), rgba(15,23,42,0.12)); }
 
     /* subtle entrance animations */
     @keyframes fadeUp { from { opacity: 0; transform: translateY(12px);} to { opacity:1; transform:translateY(0);} }
@@ -26,10 +26,29 @@
     @keyframes slideOut { from { opacity:1; transform: translateY(0);} to { opacity:0; transform:translateY(-8px);} }
 
     /* glass nav backdrop */
-    .glass { background: rgba(255,255,255,0.75); backdrop-filter: blur(6px); }
+    .glass { background: rgba(255,255,255,0.85); backdrop-filter: blur(6px); }
 
     /* small focus styles for accessibility */
-    a:focus, button:focus, input:focus { outline: 3px solid rgba(15,118,110,0.18); outline-offset: 2px; }
+    a:focus, button:focus, input:focus { outline: 3px solid rgba(199,28,28,0.14); outline-offset: 2px; }
+
+    /* responsive logo */
+    .logo-img { height: 44px; width: auto; }
+    @media (min-width: 640px) { .logo-img { height: 54px; } }
+
+    .hero-overlay {
+  background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.55),
+      rgba(0, 0, 0, 0.35) 40%,
+      rgba(0, 0, 0, 0.15) 70%,
+      rgba(0, 0, 0, 0.05)
+    ),
+    linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.45),
+      rgba(0, 0, 0, 0.05)
+    );
+}
   </style>
 </head>
 <body class="antialiased text-gray-800 bg-gradient-to-b from-white via-slate-50 to-slate-100">
@@ -37,10 +56,12 @@
   <header class="sticky top-4 z-50 px-4">
     <div class="max-w-6xl mx-auto">
       <div class="flex items-center justify-between p-3 rounded-xl glass shadow-md">
+
+        <!-- LOGO -->
         <a href="#" class="flex items-center gap-3">
-          <div class="w-12 h-12 rounded-lg bg-[var(--primary)] flex items-center justify-center text-white font-bold shadow">JS</div>
-          <div>
-            <div class="text-lg font-extrabold text-slate-800">Jatinshivshakticorporation</div>
+          <img src="images/logo.png" alt="Jatinshivshakticorporation Logo" class="logo-img object-contain" />
+          <div class="hidden sm:block">
+            <div class="text-lg font-extrabold text-[var(--dark)] leading-tight">Jatinshivshakticorporation</div>
             <div class="text-xs text-slate-500">Electrical Contractors • Tender Projects</div>
           </div>
         </a>
@@ -56,7 +77,7 @@
         </nav>
 
         <div class="md:hidden">
-          <button id="mobile-btn" class="p-2 rounded-md border">
+          <button id="mobile-btn" aria-label="Open menu" class="p-2 rounded-md border">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-700" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 5h14M3 10h14M3 15h14" clip-rule="evenodd" /></svg>
           </button>
         </div>
@@ -87,7 +108,7 @@
         <div class="absolute inset-0 flex items-center">
           <div class="max-w-4xl mx-auto px-6 sm:px-8">
             <div class="text-white max-w-2xl">
-              <h1 class="text-3xl sm:text-5xl font-extrabold drop-shadow-lg fade-up" style="animation-delay:120ms">Reliable Electrical Contracting & Underground LT‑Line Services</h1>
+              <h1 class="text-3xl sm:text-5xl font-extrabold drop-shadow-lg fade-up" style="animation-delay:120ms">Reliable Electrical Contracting & Underground LT-Line Services</h1>
               <p class="mt-3 text-sm sm:text-lg opacity-95 drop-shadow-sm fade-up" style="animation-delay:260ms">Tender-based electrical contractor with expertise in underground installations, IT-line transfer and dependable maintenance. Trusted, compliant and fast.</p>
 
               <div class="mt-6 flex gap-3 fade-up" style="animation-delay:380ms">
@@ -109,52 +130,90 @@
 
   <!-- SERVICES -->
   <section id="services" class="py-14">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-10">
-        <h2 class="text-2xl font-bold text-slate-800">Our Services</h2>
-        <p class="mt-2 text-slate-500">Specialized electrical contracting services for tender projects, commercial and industrial needs.</p>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- service card -->
-        <div class="p-6 rounded-xl bg-white shadow hover:shadow-lg transform hover:-translate-y-2 transition">
-          <div class="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-[var(--primary)] text-white font-semibold">⚡</div>
-          <h3 class="mt-4 font-semibold text-lg">Underground Electrical Work</h3>
-          <p class="mt-2 text-slate-600 text-sm">Design, installation and safe laying of underground power and distribution systems for commercial sites.</p>
-        </div>
-
-        <div class="p-6 rounded-xl bg-white shadow hover:shadow-lg transform hover:-translate-y-2 transition">
-          <div class="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-[var(--primary)] text-white font-semibold">💻</div>
-          <h3 class="mt-4 font-semibold text-lg">LT‑Line Transfer & Wiring</h3>
-          <p class="mt-2 text-slate-600 text-sm">IT cable relocation, structured cabling and transfer services with minimal downtime and careful planning.</p>
-        </div>
-
-        <div class="p-6 rounded-xl bg-white shadow hover:shadow-lg transform hover:-translate-y-2 transition">
-          <div class="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-[var(--primary)] text-white font-semibold">🛠️</div>
-          <h3 class="mt-4 font-semibold text-lg">Maintenance & Repair</h3>
-          <p class="mt-2 text-slate-600 text-sm">Scheduled and emergency maintenance — troubleshooting, repair and preventive upkeep to keep systems running.</p>
-        </div>
-
-        <div class="p-6 rounded-xl bg-white shadow hover:shadow-lg transform hover:-translate-y-2 transition">
-          <div class="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-[var(--primary)] text-white font-semibold">📄</div>
-          <h3 class="mt-4 font-semibold text-lg">Tender-Based Contracting</h3>
-          <p class="mt-2 text-slate-600 text-sm">Experienced in working on tendered projects with on-time delivery and adherence to specifications.</p>
-        </div>
-
-        <div class="p-6 rounded-xl bg-white shadow hover:shadow-lg transform hover:-translate-y-2 transition">
-          <div class="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-[var(--primary)] text-white font-semibold">🔎</div>
-          <h3 class="mt-4 font-semibold text-lg">Site Survey & Planning</h3>
-          <p class="mt-2 text-slate-600 text-sm">Comprehensive site surveys and project planning to ensure accurate scope and cost estimation.</p>
-        </div>
-
-        <div class="p-6 rounded-xl bg-white shadow hover:shadow-lg transform hover:-translate-y-2 transition">
-          <div class="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-[var(--primary)] text-white font-semibold">✔️</div>
-          <h3 class="mt-4 font-semibold text-lg">Safety Compliance</h3>
-          <p class="mt-2 text-slate-600 text-sm">Work performed to standard safety protocols, ensuring compliant and secure installations.</p>
-        </div>
-      </div>
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-10">
+      <h2 class="text-2xl font-bold text-slate-800">Our Services</h2>
+      <p class="mt-2 text-slate-500">Specialized electrical contracting services for tender projects, commercial and industrial needs.</p>
     </div>
-  </section>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- Underground Electrical Work -->
+      <div class="p-6 rounded-xl bg-white shadow hover:shadow-lg transform hover:-translate-y-2 transition">
+        <div class="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-[var(--primary)] text-white">
+          <!-- bolt icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+          </svg>
+        </div>
+        <h3 class="mt-4 font-semibold text-lg">Underground Electrical Work</h3>
+        <p class="mt-2 text-slate-600 text-sm">Design, installation and safe laying of underground power and distribution systems for commercial sites.</p>
+      </div>
+
+      <!-- LT-Line Transfer -->
+      <div class="p-6 rounded-xl bg-white shadow hover:shadow-lg transform hover:-translate-y-2 transition">
+        <div class="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-[var(--primary)] text-white">
+          <!-- cable icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8h4v8H3zm14 0h4v8h-4zm-7-3h2v14h-2z"/>
+          </svg>
+        </div>
+        <h3 class="mt-4 font-semibold text-lg">LT-Line Transfer & Wiring</h3>
+        <p class="mt-2 text-slate-600 text-sm">IT cable relocation, structured cabling and transfer services with minimal downtime and careful planning.</p>
+      </div>
+
+      <!-- Maintenance -->
+      <div class="p-6 rounded-xl bg-white shadow hover:shadow-lg transform hover:-translate-y-2 transition">
+        <div class="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-[var(--primary)] text-white">
+          <!-- wrench icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8l10 10m0 0l-3 3m3-3l3-3m-3 3l-3-3m0 0L7 8m3-3l3 3m-3-3l-3 3"/>
+          </svg>
+        </div>
+        <h3 class="mt-4 font-semibold text-lg">Maintenance & Repair</h3>
+        <p class="mt-2 text-slate-600 text-sm">Scheduled and emergency maintenance — troubleshooting, repair and preventive upkeep to keep systems running.</p>
+      </div>
+
+      <!-- Tender Contracting -->
+      <div class="p-6 rounded-xl bg-white shadow hover:shadow-lg transform hover:-translate-y-2 transition">
+        <div class="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-[var(--primary)] text-white">
+          <!-- document icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h6l6 6v12a2 2 0 01-2 2z"/>
+          </svg>
+        </div>
+        <h3 class="mt-4 font-semibold text-lg">Tender-Based Contracting</h3>
+        <p class="mt-2 text-slate-600 text-sm">Experienced in working on tendered projects with on-time delivery and adherence to specifications.</p>
+      </div>
+
+      <!-- Survey -->
+      <div class="p-6 rounded-xl bg-white shadow hover:shadow-lg transform hover:-translate-y-2 transition">
+        <div class="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-[var(--primary)] text-white">
+          <!-- search icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M10 18a8 8 0 110-16 8 8 0 010 16z"/>
+          </svg>
+        </div>
+        <h3 class="mt-4 font-semibold text-lg">Site Survey & Planning</h3>
+        <p class="mt-2 text-slate-600 text-sm">Comprehensive site surveys and project planning to ensure accurate scope and cost estimation.</p>
+      </div>
+
+      <!-- Safety -->
+      <div class="p-6 rounded-xl bg-white shadow hover:shadow-lg transform hover:-translate-y-2 transition">
+        <div class="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-[var(--primary)] text-white">
+          <!-- shield icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <h3 class="mt-4 font-semibold text-lg">Safety Compliance</h3>
+        <p class="mt-2 text-slate-600 text-sm">Work performed to standard safety protocols, ensuring compliant and secure installations.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
   <!-- ABOUT -->
   <section id="about" class="bg-slate-50 py-14">
@@ -250,13 +309,11 @@
       </div>
 
       <div class="relative">
-        <div id="testimonial-wrap" class="min-h-[220px]">
-          <!-- slides inserted by JS -->
-        </div>
+        <div id="testimonial-wrap" class="min-h-[220px]"></div>
 
         <div class="mt-6 flex justify-center gap-3">
-          <button id="prev" class="px-3 py-2 rounded bg-white shadow">◀</button>
-          <button id="next" class="px-3 py-2 rounded bg-white shadow">▶</button>
+          <button id="prev" aria-label="Previous testimonial" class="px-3 py-2 rounded bg-white shadow">◀</button>
+          <button id="next" aria-label="Next testimonial" class="px-3 py-2 rounded bg-white shadow">▶</button>
         </div>
       </div>
     </div>
@@ -308,37 +365,45 @@
 
           <div class="mt-6 space-y-3">
             <div class="flex items-center gap-3">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[var(--primary)]" viewBox="0 0 20 20" fill="currentColor"><path d="M2.003 5.884L10 10.882l7.997-4.998A2 2 0 0016.764 3H3.236a2 2 0 00-1.233 2.884z" /></svg>
+              <div class="homepng w-5 h-5 text-[var(--primary)]  ">
+                  <img src="images/email.png" alt="">
+                </div>
               <div>
                 <div class="text-sm text-slate-500">Email</div>
-                <div class="font-medium">info@jatinshivshakticorporation.example</div>
+                <div class="font-medium">jatinshivshakticorporation.in</div>
               </div>
             </div>
 
             <div class="flex items-center gap-3">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[var(--primary)]" viewBox="0 0 20 20" fill="currentColor"><path d="M2 3.5A1.5 1.5 0 013.5 2h13A1.5 1.5 0 0118 3.5v13a1.5 1.5 0 01-1.5 1.5h-13A1.5 1.5 0 012 16.5v-13zM6 6h8v2H6V6z" /></svg>
+              <div class="homepng w-5 h-5 text-[var(--primary)]  ">
+                  <img src="images/call.png" alt="">
+                </div>
               <div>
                 <div class="text-sm text-slate-500">Phone</div>
-                <div class="font-medium">+91 98765 43210 (dummy)</div>
+                <div class="font-medium">+91 9724021240</div>
               </div>
             </div>
 
             <div class="flex items-center gap-3">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[var(--primary)]" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.05 3.05A7 7 0 1116.95 14.95 7 7 0 015.05 3.05zM10 5.5a1 1 0 100 2 1 1 0 000-2z" clip-rule="evenodd" /></svg>
+                <div class="homepng w-5 h-5 text-[var(--primary)]  ">
+                  <img src="images/home (2).png" alt="">
+                </div>
+                
               <div>
+                
                 <div class="text-sm text-slate-500">Address</div>
-                <div class="font-medium">123 Industrial Area, Cityname, State (dummy)</div>
+                <div class="font-medium">B-502, Shivalik Heights, Nr.Prince Haven, Dabholi Road, Katargam, Surat 395004</div>
               </div>
             </div>
 
-            <div class="mt-4">
+            <!-- <div class="mt-4">
               <div class="text-sm text-slate-500">Follow</div>
               <div class="flex gap-3 mt-2">
                 <a href="#" class="text-[var(--primary)] text-sm">LinkedIn</a>
                 <a href="#" class="text-[var(--primary)] text-sm">Facebook</a>
                 <a href="#" class="text-[var(--primary)] text-sm">Instagram</a>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
 
@@ -368,21 +433,61 @@
   </section>
 
   <!-- FOOTER -->
-  <footer class="bg-slate-900 text-white py-6 mt-8">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
-      <div>
-        <div class="font-semibold">Jatinshivshakticorporation</div>
-        <div class="text-sm text-slate-400">Tender-based electrical contracting • Underground & IT-line services</div>
+  <!-- UPDATED FOOTER: dark gradient background + red hover accents -->
+  <footer class="bg-white text-slate-700 pt-10 border-t-4" style="border-color: var(--primary);">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- TOP SECTION -->
+    <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+
+      <!-- Logo + Description -->
+      <div class="flex items-center gap-4 text-center md:text-left">
+        <img src="images/logo.png" alt="Jatinshivshakticorporation" class="h-12 w-auto object-contain" />
+        <div>
+          <div class="font-semibold text-slate-900 text-lg">Jatinshivshakticorporation</div>
+          <div class="text-sm text-slate-600">
+            Tender-based electrical contracting • Underground & IT-line services
+          </div>
+        </div>
       </div>
-      <div class="text-sm text-slate-400">© <span id="year"></span> Jatinshivshakticorporation. All rights reserved.</div>
+
+      <!-- Menu -->
+      <div class="flex flex-wrap justify-center gap-6 text-sm">
+        <a href="#services" class="text-slate-600 hover:text-[var(--primary)] transition">Services</a>
+        <a href="#portfolio" class="text-slate-600 hover:text-[var(--primary)] transition">Portfolio</a>
+        <a href="#about" class="text-slate-600 hover:text-[var(--primary)] transition">About</a>
+        <a href="#contact" class="text-slate-600 hover:text-[var(--primary)] transition">Contact</a>
+      </div>
+
+      <!-- Contact details -->
+      <div class="text-center md:text-right text-sm text-slate-600">
+        <div>Email: <span class="text-slate-900 font-medium">info@jatinshivshakticorporation.example</span></div>
+        <div>Phone: <span class="text-slate-900 font-medium">+91 98765 43210</span></div>
+      </div>
+
     </div>
-  </footer>
+
+    <!-- Divider -->
+    <div class="mt-10 border-t border-slate-200"></div>
+
+    <!-- BOTTOM COPYRIGHT -->
+    <div class="pt-6 text-center text-sm text-slate-500">
+      © <span id="year"></span> Jatinshivshakticorporation. All rights reserved. • Designed by you
+    </div>
+
+  </div>
+</footer>
+
+
+
+
 
   <script>
-    // small interactivity
+    // mobile menu
     document.getElementById('mobile-btn').addEventListener('click', function(){
       document.getElementById('mobile-menu').classList.toggle('hidden');
     });
+
     // set year
     document.getElementById('year').textContent = new Date().getFullYear();
 
