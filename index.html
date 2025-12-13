@@ -1,555 +1,1287 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" type="image/png" href="/images/favicon-32.png" sizes="32x32" />
-  <title>Jatinshivshakticorporation — Electrical Contractors</title>
-  <meta name="description" content="Jatinshivshakticorporation — Tender-based electrical contractors specializing in underground electrical work, IT-line transfer and maintenance." />
-  <link rel="preconnect" href="https://cdn.tailwindcss.com">
-  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jatinshivshakticorporation — Premium Electrical Contractors</title>
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
   <style>
-    /* Color tokens: logo red and dark (black) */
-    :root{ --primary:#c71c1c; --dark:#0f172a; }
+    :root {
+      --red-primary: #c71c1c;
+      --red-dark: #a01515;
+      --black: #0f172a;
+      --gray-light: #f8f9fa;
+      --gray-dark: #6c757d;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #ffffff;
+      color: var(--black);
+      overflow-x: hidden;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    /* Navbar */
+    .navbar {
+      background-color: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+      padding: 1rem 0;
+      transition: all 0.3s ease;
+    }
+    
+    .navbar.scrolled {
+      padding: 0.5rem 0;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+    }
+    
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 1.4rem;
+      color: var(--black) !important;
+    }
+    
+    .logo-box {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, var(--red-primary), var(--red-dark));
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 12px;
+    }
+    
+    .logo-icon {
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    
+    .nav-link {
+      color: var(--black) !important;
+      font-weight: 500;
+      margin: 0 15px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    
+    .nav-link:hover {
+      color: var(--red-primary) !important;
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 2px;
+      background: var(--red-primary);
+      transition: width 0.3s ease;
+    }
+    
+    .nav-link:hover::after {
+      width: 80%;
+    }
+    
+    .btn-custom-red {
+      background: var(--red-primary);
+      color: white;
+      padding: 10px 28px;
+      border-radius: 50px;
+      font-weight: 600;
+      border: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(199, 28, 28, 0.3);
+    }
+    
+    .btn-custom-red:hover {
+      background: var(--red-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(199, 28, 28, 0.4);
+    }
+    
+    /* Hero Section */
+    .hero-section {
+      position: relative;
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+      padding: 80px 0 60px;
+      overflow: hidden;
+    }
+    
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(199, 28, 28, 0.05), rgba(199, 28, 28, 0.02));
+      clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
+      z-index: 1;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+    
+    .hero-badge {
+      display: inline-block;
+      background: rgba(199, 28, 28, 0.1);
+      color: var(--red-primary);
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      border: 1px solid rgba(199, 28, 28, 0.2);
+    }
+    
+    .hero-title {
+      font-size: 3.5rem;
+      font-weight: 800;
+      line-height: 1.2;
+      color: var(--black);
+      margin-bottom: 25px;
+    }
+    
+    .hero-title .highlight {
+      color: var(--red-primary);
+      position: relative;
+      display: inline-block;
+    }
+    
+    .hero-subtitle {
+      font-size: 1.2rem;
+      color: var(--gray-dark);
+      line-height: 1.8;
+      margin-bottom: 35px;
+      max-width: 600px;
+    }
+    
+    .hero-image-box {
+      position: relative;
+      z-index: 2;
+    }
+    
+    .hero-image {
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+      transition: transform 0.5s ease;
+    }
+    
+    .hero-image:hover {
+      transform: translateY(-10px);
+    }
+    
+    .stats-box {
+      background: white;
+      padding: 40px 20px;
+      border-radius: 15px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+      margin-top: 50px;
+    }
+    
+    .stat-item {
+      text-align: center;
+      padding: 0 15px;
+    }
+    
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--red-primary);
+      line-height: 1;
+    }
+    
+    .stat-label {
+      font-size: 0.95rem;
+      color: var(--gray-dark);
+      margin-top: 8px;
+      font-weight: 500;
+    }
+    
+    /* Section Title */
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+      position: relative;
+    }
+    
+    .section-badge {
+      display: inline-block;
+      background: rgba(199, 28, 28, 0.1);
+      color: var(--red-primary);
+      padding: 6px 18px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .section-title h2 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 15px;
+    }
+    
+    .section-title h2 .text-red {
+      color: var(--red-primary);
+    }
+    
+    .section-subtitle {
+      font-size: 1.1rem;
+      color: var(--gray-dark);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    /* Service Cards */
+    .service-card {
+      background: white;
+      padding: 40px 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 30px rgba(0, 0, 0, 0.08);
+      transition: all 0.4s ease;
+      height: 100%;
+      border: 1px solid #f0f0f0;
+    }
+    
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 50px rgba(199, 28, 28, 0.15);
+      border-color: var(--red-primary);
+    }
+    
+    .service-icon {
+      width: 70px;
+      height: 70px;
+      background: linear-gradient(135deg, var(--red-primary), var(--red-dark));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 25px;
+      transition: all 0.3s ease;
+    }
+    
+    .service-card:hover .service-icon {
+      transform: scale(1.1) rotate(5deg);
+    }
+    
+    .service-icon svg {
+      width: 35px;
+      height: 35px;
+      stroke: white;
+      fill: none;
+      stroke-width: 2;
+    }
+    
+    .service-card h3 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 15px;
+    }
+    
+    .service-card p {
+      color: var(--gray-dark);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+    
+    .service-link {
+      color: var(--red-primary);
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s ease;
+    }
+    
+    .service-link:hover {
+      gap: 12px;
+    }
+    
+    /* About Section */
+    .about-section {
+      padding: 80px 0;
+      background: var(--gray-light);
+    }
+    
+    .about-image {
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+    }
+    
+    .about-content h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 25px;
+    }
+    
+    .about-content p {
+      font-size: 1.05rem;
+      color: var(--gray-dark);
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+    
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 30px 0;
+    }
+    
+    .feature-list li {
+      padding: 12px 0;
+      font-size: 1.05rem;
+      color: var(--black);
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    
+    .feature-list li::before {
+      content: '✓';
+      background: var(--red-primary);
+      color: white;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+    
+    /* Portfolio Gallery */
+    .portfolio-section {
+      padding: 80px 0;
+      background: white;
+    }
+    
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+      cursor: pointer;
+    }
+    
+    .gallery-item img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .gallery-item:hover img {
+      transform: scale(1.15);
+    }
+    
+    .gallery-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(199, 28, 28, 0.9), rgba(15, 23, 42, 0.8));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    
+    .gallery-item:hover .gallery-overlay {
+      opacity: 1;
+    }
+    
+    .gallery-text {
+      color: white;
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+    
+    /* Testimonial Section */
+    .testimonial-section {
+      padding: 80px 0;
+      background: var(--gray-light);
+    }
+    
+    .testimonial-card {
+      background: white;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 5px 30px rgba(0, 0, 0, 0.08);
+      margin: 15px;
+      height: 100%;
+    }
+    
+    .testimonial-header {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 25px;
+    }
+    
+    .testimonial-avatar {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, var(--red-primary), var(--red-dark));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+    
+    .testimonial-info h5 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 5px;
+    }
+    
+    .testimonial-info p {
+      font-size: 0.9rem;
+      color: var(--gray-dark);
+      margin: 0;
+    }
+    
+    .testimonial-text {
+      font-size: 1.05rem;
+      color: var(--black);
+      line-height: 1.8;
+      font-style: italic;
+    }
+    
+    /* FAQ Section */
+    .faq-section {
+      padding: 80px 0;
+      background: white;
+    }
+    
+    .accordion-button {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--black);
+      background: white;
+      padding: 20px 25px;
+    }
+    
+    .accordion-button:not(.collapsed) {
+      background: rgba(199, 28, 28, 0.05);
+      color: var(--red-primary);
+      box-shadow: none;
+    }
+    
+    .accordion-button:focus {
+      box-shadow: none;
+      border-color: var(--red-primary);
+    }
+    
+    .accordion-body {
+      padding: 25px;
+      font-size: 1.05rem;
+      color: var(--gray-dark);
+      line-height: 1.8;
+    }
+    
+    /* Contact Section */
+    .contact-section {
+      padding: 80px 0;
+      background: var(--gray-light);
+    }
+    
+    .contact-info {
+      background: white;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 5px 30px rgba(0, 0, 0, 0.08);
+      margin-bottom: 30px;
+    }
+    
+    .contact-item {
+      display: flex;
+      align-items: start;
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+    
+    .contact-icon {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, var(--red-primary), var(--red-dark));
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    
+    .contact-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: white;
+      fill: none;
+      stroke-width: 2;
+    }
+    
+    .contact-details h5 {
+      font-size: 0.9rem;
+      color: var(--gray-dark);
+      margin-bottom: 5px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .contact-details p {
+      font-size: 1.05rem;
+      color: var(--black);
+      font-weight: 600;
+      margin: 0;
+    }
+    
+    .contact-form {
+      background: white;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 5px 30px rgba(0, 0, 0, 0.08);
+    }
+    
+    .form-control, .form-select {
+      padding: 14px 18px;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+    
+    .form-control:focus, .form-select:focus {
+      border-color: var(--red-primary);
+      box-shadow: 0 0 0 0.2rem rgba(199, 28, 28, 0.15);
+    }
+    
+    .btn-submit {
+      width: 100%;
+      padding: 15px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      background: var(--red-primary);
+      border: none;
+      border-radius: 8px;
+      color: white;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-submit:hover {
+      background: var(--red-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(199, 28, 28, 0.3);
+    }
+    
+    /* Footer */
+    footer {
+      background: linear-gradient(135deg, var(--black), #1a2332);
+      color: white;
+      padding: 60px 0 20px;
+    }
+    
+    .footer-logo-box {
+      width: 300px;
+      height: auto;
+      /* white background  */
 
-    .hero-overlay { background: linear-gradient(90deg, rgba(15,23,42,0.45), rgba(15,23,42,0.12)); }
-
-    /* subtle entrance animations */
-    @keyframes fadeUp { from { opacity: 0; transform: translateY(12px);} to { opacity:1; transform:translateY(0);} }
-    .fade-up { animation: fadeUp 700ms ease-out both; }
-
-    @keyframes floaty { 0% { transform: translateY(0);} 50% { transform: translateY(-6px);} 100% { transform: translateY(0);} }
-    .floaty { animation: floaty 5s ease-in-out infinite; }
-
-    /* testimonial slide animations */
-    .slide-enter { animation: slideIn 600ms ease-out both; }
-    .slide-exit { animation: slideOut 600ms ease-in both; }
-    @keyframes slideIn { from { opacity:0; transform: translateY(12px);} to { opacity:1; transform:translateY(0);} }
-    @keyframes slideOut { from { opacity:1; transform: translateY(0);} to { opacity:0; transform:translateY(-8px);} }
-
-    /* glass nav backdrop */
-    .glass { background: rgba(255,255,255,0.85); backdrop-filter: blur(6px); }
-
-    /* small focus styles for accessibility */
-    a:focus, button:focus, input:focus { outline: 3px solid rgba(199,28,28,0.14); outline-offset: 2px; }
-
-    /* responsive logo */
-    .logo-img { height: 44px; width: auto; }
-    @media (min-width: 640px) { .logo-img { height: 54px; } }
-
-    .hero-overlay {
-  background: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.55),
-      rgba(0, 0, 0, 0.35) 40%,
-      rgba(0, 0, 0, 0.15) 70%,
-      rgba(0, 0, 0, 0.05)
-    ),
-    linear-gradient(
-      to right,
-      rgba(0, 0, 0, 0.45),
-      rgba(0, 0, 0, 0.05)
-    );
-}
+      background: linear-gradient(135deg, white , #f0f0f0);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    
+    .footer-logo-icon {
+      color: white;
+      font-size: 30px;
+      font-weight: bold;
+    }
+    
+    .footer-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    
+    .footer-subtitle {
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 25px;
+    }
+    
+    .footer-links {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .footer-links li {
+      margin-bottom: 12px;
+    }
+    
+    .footer-links a {
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .footer-links a:hover {
+      color: var(--red-primary);
+      padding-left: 5px;
+    }
+    
+    .footer-contact p {
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      margin-top: 50px;
+      padding-top: 25px;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.6);
+    }
+    
+    /* Responsive */
+    @media (max-width: 991px) {
+      .hero-title {
+        font-size: 2.5rem;
+      }
+      
+      .section-title h2 {
+        font-size: 2.2rem;
+      }
+      
+      .hero-image-box {
+        margin-top: 50px;
+      }
+    }
+    
+    @media (max-width: 767px) {
+      .hero-title {
+        font-size: 2rem;
+      }
+      
+      .stat-number {
+        font-size: 2rem;
+      }
+      
+      .section-title h2 {
+        font-size: 1.8rem;
+      }
+    }
   </style>
 </head>
-<body class="antialiased text-gray-800 bg-gradient-to-b from-white via-slate-50 to-slate-100">
-  <!-- NAV -->
-  <header class="sticky top-4 z-50 px-4">
-    <div class="max-w-6xl mx-auto">
-      <div class="flex items-center justify-between p-3 rounded-xl glass shadow-md">
+<body>
 
-        <!-- LOGO -->
-        <a href="#" class="flex items-center gap-3">
-          <img src="images/logo.png" alt="Jatinshivshakticorporation Logo" class="logo-img object-contain" />
-          <div class="hidden sm:block">
-            <div class="text-lg font-extrabold text-[var(--dark)] leading-tight">Jatinshivshakticorporation</div>
-            <div class="text-xs text-slate-500">Electrical Contractors • Tender Projects</div>
-          </div>
-        </a>
-
-        <nav class="hidden md:flex items-center gap-6 text-sm">
-          <a href="#services" class="hover:text-[var(--primary)] transition">Services</a>
-          <a href="#portfolio" class="hover:text-[var(--primary)] transition">Portfolio</a>
-          <a href="#about" class="hover:text-[var(--primary)] transition">About</a>
-          <a href="#mission" class="hover:text-[var(--primary)] transition">Mission</a>
-          <a href="#faq" class="hover:text-[var(--primary)] transition">FAQ</a>
-          <a href="#testimonials" class="hover:text-[var(--primary)] transition">Clients</a>
-          <a href="#contact" class="text-white bg-[var(--primary)] px-4 py-2 rounded-md shadow hover:opacity-95">Contact</a>
-        </nav>
-
-        <div class="md:hidden">
-          <button id="mobile-btn" aria-label="Open menu" class="p-2 rounded-md border">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-700" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 5h14M3 10h14M3 15h14" clip-rule="evenodd" /></svg>
-          </button>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="#home">
+        <!-- <div class="logo-box">
+          <span class="logo-icon">⚡</span>
         </div>
-      </div>
-
-      <!-- mobile menu -->
-      <div id="mobile-menu" class="md:hidden mt-3 hidden">
-        <div class="flex flex-col gap-2 bg-white p-3 rounded-lg shadow">
-          <a href="#services" class="block p-2 rounded hover:bg-slate-50">Services</a>
-          <a href="#portfolio" class="block p-2 rounded hover:bg-slate-50">Portfolio</a>
-          <a href="#about" class="block p-2 rounded hover:bg-slate-50">About</a>
-          <a href="#mission" class="block p-2 rounded hover:bg-slate-50">Mission</a>
-          <a href="#faq" class="block p-2 rounded hover:bg-slate-50">FAQ</a>
-          <a href="#testimonials" class="block p-2 rounded hover:bg-slate-50">Clients</a>
-          <a href="#contact" class="block p-2 rounded text-[var(--primary)] font-medium">Contact</a>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <!-- HERO -->
-  <section class="relative mt-8">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="relative rounded-xl overflow-hidden shadow-lg">
-        <img src="images/350a65e6-9401-4ce8-b259-7183575926d5.png" alt="Worksite image" class="w-full h-80 sm:h-96 object-cover brightness-90" />
-        <div class="absolute inset-0 hero-overlay"></div>
-
-        <div class="absolute inset-0 flex items-center">
-          <div class="max-w-4xl mx-auto px-6 sm:px-8">
-            <div class="text-white max-w-2xl">
-              <h1 class="text-3xl sm:text-5xl font-extrabold drop-shadow-lg fade-up" style="animation-delay:120ms">Reliable Electrical Contracting & Underground LT-Line Services</h1>
-              <p class="mt-3 text-sm sm:text-lg opacity-95 drop-shadow-sm fade-up" style="animation-delay:260ms">Tender-based electrical contractor with expertise in underground installations, IT-line transfer and dependable maintenance. Trusted, compliant and fast.</p>
-
-              <div class="mt-6 flex gap-3 fade-up" style="animation-delay:380ms">
-                <a href="#contact" class="inline-flex items-center gap-2 bg-[var(--primary)] hover:scale-105 transform transition text-white px-5 py-3 rounded-lg shadow-lg">Get a Quote
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
-                </a>
-                <a href="#portfolio" class="inline-flex items-center gap-2 bg-white/20 border border-white text-white px-4 py-3 rounded-lg hover:translate-y-[-3px] transition">View Projects</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="hidden lg:block absolute right-8 bottom-6 w-44 h-44 rounded-xl overflow-hidden shadow-xl floaty">
-            <img src="images/download (1).jpeg" alt="Team snapshot" class="w-full h-full object-cover" />
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SERVICES -->
-  <section id="services" class="py-14">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-10">
-      <h2 class="text-2xl font-bold text-slate-800">Our Services</h2>
-      <p class="mt-2 text-slate-500">Specialized electrical contracting services for tender projects, commercial and industrial needs.</p>
-    </div>
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-
-      <!-- Underground Electrical Work -->
-      <div class="p-6 rounded-xl bg-white shadow hover:shadow-lg transform hover:-translate-y-2 transition">
-        <div class="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-[var(--primary)] text-white">
-          <!-- bolt icon -->
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-          </svg>
-        </div>
-        <h3 class="mt-4 font-semibold text-lg">Underground Electrical Work</h3>
-        <p class="mt-2 text-slate-600 text-sm">Design, installation and safe laying of underground power and distribution systems for commercial sites.</p>
-      </div>
-
-      <!-- LT-Line Transfer -->
-      <div class="p-6 rounded-xl bg-white shadow hover:shadow-lg transform hover:-translate-y-2 transition">
-        <div class="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-[var(--primary)] text-white">
-          <!-- cable icon -->
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8h4v8H3zm14 0h4v8h-4zm-7-3h2v14h-2z"/>
-          </svg>
-        </div>
-        <h3 class="mt-4 font-semibold text-lg">LT-Line Transfer & Wiring</h3>
-        <p class="mt-2 text-slate-600 text-sm">IT cable relocation, structured cabling and transfer services with minimal downtime and careful planning.</p>
-      </div>
-
-      <!-- Maintenance -->
-      <div class="p-6 rounded-xl bg-white shadow hover:shadow-lg transform hover:-translate-y-2 transition">
-        <div class="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-[var(--primary)] text-white">
-          <!-- wrench icon -->
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8l10 10m0 0l-3 3m3-3l3-3m-3 3l-3-3m0 0L7 8m3-3l3 3m-3-3l-3 3"/>
-          </svg>
-        </div>
-        <h3 class="mt-4 font-semibold text-lg">Maintenance & Repair</h3>
-        <p class="mt-2 text-slate-600 text-sm">Scheduled and emergency maintenance — troubleshooting, repair and preventive upkeep to keep systems running.</p>
-      </div>
-
-      <!-- Tender Contracting -->
-      <div class="p-6 rounded-xl bg-white shadow hover:shadow-lg transform hover:-translate-y-2 transition">
-        <div class="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-[var(--primary)] text-white">
-          <!-- document icon -->
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h6l6 6v12a2 2 0 01-2 2z"/>
-          </svg>
-        </div>
-        <h3 class="mt-4 font-semibold text-lg">Tender-Based Contracting</h3>
-        <p class="mt-2 text-slate-600 text-sm">Experienced in working on tendered projects with on-time delivery and adherence to specifications.</p>
-      </div>
-
-      <!-- Survey -->
-      <div class="p-6 rounded-xl bg-white shadow hover:shadow-lg transform hover:-translate-y-2 transition">
-        <div class="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-[var(--primary)] text-white">
-          <!-- search icon -->
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M10 18a8 8 0 110-16 8 8 0 010 16z"/>
-          </svg>
-        </div>
-        <h3 class="mt-4 font-semibold text-lg">Site Survey & Planning</h3>
-        <p class="mt-2 text-slate-600 text-sm">Comprehensive site surveys and project planning to ensure accurate scope and cost estimation.</p>
-      </div>
-
-      <!-- Safety -->
-      <div class="p-6 rounded-xl bg-white shadow hover:shadow-lg transform hover:-translate-y-2 transition">
-        <div class="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-[var(--primary)] text-white">
-          <!-- shield icon -->
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-          </svg>
-        </div>
-        <h3 class="mt-4 font-semibold text-lg">Safety Compliance</h3>
-        <p class="mt-2 text-slate-600 text-sm">Work performed to standard safety protocols, ensuring compliant and secure installations.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-  <!-- ABOUT -->
-  <section id="about" class="bg-slate-50 py-14">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
         <div>
-          <h2 class="text-2xl font-bold text-slate-800">About Jatinshivshakticorporation</h2>
-          <p class="mt-4 text-slate-600">Founded with a focus on technical excellence, Jatinshivshakticorporation offers tender-based electrical contracting services. With 2 years of hands-on experience, our team specializes in underground installations, IT-line transfers and maintenance work for commercial and industrial clients.</p>
-          <ul class="mt-4 space-y-2 text-slate-600">
-            <li class="flex items-start gap-3"><span class="text-[var(--primary)] font-semibold">•</span><span>Quick and professional execution</span></li>
-            <li class="flex items-start gap-3"><span class="text-[var(--primary)] font-semibold">•</span><span>Safety-first approach and compliance</span></li>
-            <li class="flex items-start gap-3"><span class="text-[var(--primary)] font-semibold">•</span><span>Transparent costing for tender projects</span></li>
-          </ul>
+          <div style="font-size: 1.1rem; line-height: 1.2;">Jatinshivshakti</div>
+          <div style="font-size: 0.75rem; color: var(--gray-dark); font-weight: 400;">Electrical Excellence</div>
+        </div> -->
+        <img src="images/logo.png" alt="" style="width: 260px;">
+      </a>
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item ms-lg-2">
+            <a href="#contact" class="btn btn-custom-red">Get Quote</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero-section">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 hero-content">
+          <span class="hero-badge">● Premium Electrical Solutions</span>
+          <h1 class="hero-title">
+            Power Your <br><span class="highlight">Future</span>
+          </h1>
+          <p class="hero-subtitle">
+            Cutting-edge electrical contracting with 2+ years of excellence in underground installations, IT-line transfers, and industrial maintenance.
+          </p>
+          <div class="d-flex gap-3 flex-wrap">
+            <a href="#contact" class="btn btn-custom-red btn-lg">Start Your Project</a>
+            <a href="#portfolio" class="btn btn-outline-dark btn-lg">View Portfolio</a>
+          </div>
         </div>
-        <div class="rounded-xl overflow-hidden shadow-lg">
-          <img src="images/download (1).jpeg" alt="Team at work" class="w-full h-64 object-cover" />
+        
+        <div class="col-lg-6 hero-image-box">
+          <img src="images/350a65e6-9401-4ce8-b259-7183575926d5.png" alt="Electrical Work" class="hero-image">
+        </div>
+      </div>
+      
+      <!-- Stats -->
+      <div class="stats-box">
+        <div class="row">
+          <div class="col-md-4 stat-item">
+            <div class="stat-number">20+</div>
+            <div class="stat-label">Projects Completed</div>
+          </div>
+          <div class="col-md-4 stat-item">
+            <div class="stat-number">2+</div>
+            <div class="stat-label">Years Experience</div>
+          </div>
+          <div class="col-md-4 stat-item">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Client Satisfaction</div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- MISSION / CORE VALUES -->
-  <section id="mission" class="py-14">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
-        <div class="lg:col-span-2">
-          <h2 class="text-2xl font-bold text-slate-800">Our Mission & Core Values</h2>
-          <p class="mt-4 text-slate-600">At Jatinshivshakticorporation our mission is to deliver safe, reliable and cost-effective electrical solutions for commercial and industrial projects. We focus on quality workmanship, transparent tender processes and long-term maintenance support.</p>
-
-          <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div class="p-4 rounded-lg bg-white shadow">
-              <h4 class="font-semibold text-[var(--primary)]">Safety First</h4>
-              <p class="mt-2 text-sm text-slate-600">We follow strict safety protocols and ensure every site meets compliance standards.</p>
+  <!-- Services Section -->
+  <section id="services" class="py-5" style="padding: 80px 0 !important;">
+    <div class="container">
+      <div class="section-title">
+        <span class="section-badge">Our Expertise</span>
+        <h2>Premium <span class="text-red">Services</span></h2>
+        <p class="section-subtitle">Comprehensive electrical solutions tailored for commercial and industrial excellence</p>
+      </div>
+      
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="service-card">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+              </svg>
             </div>
-            <div class="p-4 rounded-lg bg-white shadow">
-              <h4 class="font-semibold text-[var(--primary)]">Integrity & Transparency</h4>
-              <p class="mt-2 text-sm text-slate-600">Clear costing and honest communication throughout tender and project execution.</p>
-            </div>
-            <div class="p-4 rounded-lg bg-white shadow">
-              <h4 class="font-semibold text-[var(--primary)]">Technical Excellence</h4>
-              <p class="mt-2 text-sm text-slate-600">We use best-practice methodologies and experienced staff to ensure quality outcomes.</p>
-            </div>
-            <div class="p-4 rounded-lg bg-white shadow">
-              <h4 class="font-semibold text-[var(--primary)]">Client-Centric Service</h4>
-              <p class="mt-2 text-sm text-slate-600">We prioritize client timelines and maintain open channels for post-project support.</p>
-            </div>
+            <h3>Underground Electrical</h3>
+            <p>Expert installation and maintenance of underground power distribution systems with precision and safety.</p>
+            <a href="#contact" class="service-link">
+              Learn More →
+            </a>
           </div>
         </div>
-        <div class="rounded-xl overflow-hidden shadow p-6 bg-white">
-          <h3 class="text-lg font-semibold text-slate-800">Quick Facts</h3>
-          <ul class="mt-4 space-y-3 text-sm text-slate-700">
-            <li><strong>Experience:</strong> 2+ years</li>
-            <li><strong>Projects:</strong> 20+ (placeholder)</li>
-            <li><strong>Response Time:</strong> 24–48 hours</li>
-            <li><strong>Service Area:</strong> Cityname & surrounding industrial zones</li>
+        
+        <div class="col-md-6 col-lg-4">
+          <div class="service-card">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+              </svg>
+            </div>
+            <h3>IT-Line Transfer</h3>
+            <p>Seamless cable relocation and structured cabling with zero downtime and strategic planning.</p>
+            <a href="#contact" class="service-link">
+              Learn More →
+            </a>
+          </div>
+        </div>
+        
+        <div class="col-md-6 col-lg-4">
+          <div class="service-card">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+              </svg>
+            </div>
+            <h3>Maintenance & Repair</h3>
+            <p>24/7 emergency support with preventive maintenance programs to keep your systems optimal.</p>
+            <a href="#contact" class="service-link">
+              Learn More →
+            </a>
+          </div>
+        </div>
+        
+        <div class="col-md-6 col-lg-4">
+          <div class="service-card">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+              </svg>
+            </div>
+            <h3>Tender Projects</h3>
+            <p>Specialized in government and commercial tenders with transparent bidding and quality delivery.</p>
+            <a href="#contact" class="service-link">
+              Learn More →
+            </a>
+          </div>
+        </div>
+        
+        <div class="col-md-6 col-lg-4">
+          <div class="service-card">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+              </svg>
+            </div>
+            <h3>Site Survey</h3>
+            <p>Comprehensive site analysis and planning for accurate project estimation and execution.</p>
+            <a href="#contact" class="service-link">
+              Learn More →
+            </a>
+          </div>
+        </div>
+        
+        <div class="col-md-6 col-lg-4">
+          <div class="service-card">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+              </svg>
+            </div>
+            <h3>Safety Compliance</h3>
+            <p>Industry-leading safety protocols ensuring compliant and secure electrical installations.</p>
+            <a href="#contact" class="service-link">
+              Learn More →
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about-section">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <img src="images/download (1).jpeg" alt="Team at Work" class="about-image">
+        </div>
+        <div class="col-lg-6 about-content">
+          <span class="section-badge">About Us</span>
+          <h2>Building Tomorrow's <span class="text-red">Infrastructure</span> Today</h2>
+          <p>
+            Jatinshivshakticorporation stands at the forefront of electrical contracting excellence. With 2+ years of intensive experience, we've established ourselves as the trusted partner for underground installations, IT-line transfers, and comprehensive maintenance solutions.
+          </p>
+          <p>
+            Our commitment to safety, precision, and innovation drives every project we undertake. From small-scale maintenance to large tender-based installations, we deliver with unwavering quality and professionalism.
+          </p>
+          <ul class="feature-list">
+            <li>Quick and professional execution</li>
+            <li>Safety-first approach and compliance</li>
+            <li>Transparent costing for tender projects</li>
+            <li>24/7 emergency support available</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PORTFOLIO / GALLERY -->
-  <section id="portfolio" class="py-14">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-8">
-        <h2 class="text-2xl font-bold text-slate-800">Project Gallery</h2>
-        <p class="mt-2 text-slate-500">Real images from our worksites. Click to enlarge.</p>
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="portfolio-section">
+    <div class="container">
+      <div class="section-title">
+        <span class="section-badge">Our Work</span>
+        <h2>Project <span class="text-red">Gallery</span></h2>
+        <p class="section-subtitle">Real images from our worksites showcasing quality and precision</p>
       </div>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <a href="images/gallery-1.jpeg" class="block overflow-hidden rounded-xl shadow">
-          <img src="images/gallery-1.jpeg" alt="Worksite 1" class="w-full h-40 object-cover transform hover:scale-105 transition" />
-        </a>
-        <a href="images/gallery-2.jpeg" class="block overflow-hidden rounded-xl shadow">
-          <img src="images/gallery-2.jpeg" alt="Worksite 2" class="w-full h-40 object-cover transform hover:scale-105 transition" />
-        </a>
-        <a href="images/gallery-3.jpeg" class="block overflow-hidden rounded-xl shadow">
-          <img src="images/gallery-3.jpeg" alt="Worksite 3" class="w-full h-40 object-cover transform hover:scale-105 transition" />
-        </a>
-        <a href="images/gallery-4.jpeg" class="block overflow-hidden rounded-xl shadow">
-          <img src="images/gallery-4.jpeg" alt="Worksite 4" class="w-full h-40 object-cover transform hover:scale-105 transition" />
-        </a>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- TESTIMONIALS (carousel style) -->
-  <section id="testimonials" class="bg-gradient-to-r from-white via-slate-50 to-white py-14">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-8">
-        <h2 class="text-2xl font-bold text-slate-800">What Clients Say</h2>
-        <p class="mt-2 text-slate-500">Real feedback from project stakeholders and site supervisors.</p>
-      </div>
-
-      <div class="relative">
-        <div id="testimonial-wrap" class="min-h-[220px]"></div>
-
-        <div class="mt-6 flex justify-center gap-3">
-          <button id="prev" aria-label="Previous testimonial" class="px-3 py-2 rounded bg-white shadow">◀</button>
-          <button id="next" aria-label="Next testimonial" class="px-3 py-2 rounded bg-white shadow">▶</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section id="faq" class="py-14">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-8">
-        <h2 class="text-2xl font-bold text-slate-800">Frequently Asked Questions</h2>
-        <p class="mt-2 text-slate-500">Answers to common questions about our services and tender work.</p>
-      </div>
-
-      <div class="max-w-3xl mx-auto space-y-3">
-        <button class="w-full text-left p-4 bg-white rounded shadow flex justify-between items-center faq-toggle">
-          <span class="font-medium">What areas do you serve?</span>
-          <span class="text-[var(--primary)]">+</span>
-        </button>
-        <div class="faq-content p-4 bg-white rounded shadow hidden">We operate in Cityname and nearby industrial zones. For larger tender projects we can mobilize to other regions as required.</div>
-
-        <button class="w-full text-left p-4 bg-white rounded shadow flex justify-between items-center faq-toggle">
-          <span class="font-medium">Do you handle government tenders?</span>
-          <span class="text-[var(--primary)]">+</span>
-        </button>
-        <div class="faq-content p-4 bg-white rounded shadow hidden">Yes — we prepare tender documentation and bid on tender-based electrical projects following client specifications and compliance requirements.</div>
-
-        <button class="w-full text-left p-4 bg-white rounded shadow flex justify-between items-center faq-toggle">
-          <span class="font-medium">What is your safety protocol?</span>
-          <span class="text-[var(--primary)]">+</span>
-        </button>
-        <div class="faq-content p-4 bg-white rounded shadow hidden">Safety is our top priority: site PPE, permit-to-work procedures, regular tool inspections, and compliance with local electrical safety standards.</div>
-
-        <button class="w-full text-left p-4 bg-white rounded shadow flex justify-between items-center faq-toggle">
-          <span class="font-medium">How long does a typical project take?</span>
-          <span class="text-[var(--primary)]">+</span>
-        </button>
-        <div class="faq-content p-4 bg-white rounded shadow hidden">Project duration varies by scope. After a site survey we provide a timeline in the proposal. Small maintenance jobs can be completed in 1–3 days; larger underground installs depend on site conditions.</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="py-14">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <div>
-          <h2 class="text-2xl font-bold text-slate-800">Get in Touch</h2>
-          <p class="mt-3 text-slate-500">For tenders, quotes or maintenance requests, reach out and we will respond quickly.</p>
-
-          <div class="mt-6 space-y-3">
-            <div class="flex items-center gap-3">
-              <div class="homepng w-5 h-5 text-[var(--primary)]  ">
-                  <img src="images/email.png" alt="">
-                </div>
-              <div>
-                <div class="text-sm text-slate-500">Email</div>
-                <div class="font-medium">jatinshivshakticorporation.in</div>
-              </div>
+      
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="gallery-item">
+            <img src="images/gallery-1.jpeg" alt="Project 1">
+            <div class="gallery-overlay">
+              <span class="gallery-text">View Project</span>
             </div>
-
-            <div class="flex items-center gap-3">
-              <div class="homepng w-5 h-5 text-[var(--primary)]  ">
-                  <img src="images/call.png" alt="">
-                </div>
-              <div>
-                <div class="text-sm text-slate-500">Phone</div>
-                <div class="font-medium">+91 9724021240</div>
-              </div>
-            </div>
-
-            <div class="flex items-center gap-3">
-                <div class="homepng w-5 h-5 text-[var(--primary)]  ">
-                  <img src="images/home (2).png" alt="">
-                </div>
-                
-              <div>
-                
-                <div class="text-sm text-slate-500">Address</div>
-                <div class="font-medium">B-502, Shivalik Heights, Nr.Prince Haven, Dabholi Road, Katargam, Surat 395004</div>
-              </div>
-            </div>
-
-            <!-- <div class="mt-4">
-              <div class="text-sm text-slate-500">Follow</div>
-              <div class="flex gap-3 mt-2">
-                <a href="#" class="text-[var(--primary)] text-sm">LinkedIn</a>
-                <a href="#" class="text-[var(--primary)] text-sm">Facebook</a>
-                <a href="#" class="text-[var(--primary)] text-sm">Instagram</a>
-              </div>
-            </div> -->
           </div>
         </div>
-
-        <div>
-          <form class="bg-white p-6 rounded-lg shadow-sm">
-            <div class="grid grid-cols-1 gap-4">
-              <input type="text" placeholder="Your name" class="w-full border px-3 py-2 rounded" />
-              <input type="email" placeholder="Email address" class="w-full border px-3 py-2 rounded" />
-              <input type="tel" placeholder="Phone" class="w-full border px-3 py-2 rounded" />
-              <select class="w-full border px-3 py-2 rounded">
-                <option>Service required</option>
-                <option>Underground Electrical Work</option>
-                <option>IT-Line Transfer</option>
-                <option>Maintenance / Repair</option>
-                <option>Tender Project</option>
-              </select>
-              <textarea placeholder="Brief project details" class="w-full border px-3 py-2 rounded h-28"></textarea>
-              <div class="flex justify-between items-center">
-                <button type="submit" class="bg-[var(--primary)] text-white px-4 py-2 rounded">Send Request</button>
-                <div class="text-sm text-slate-500">We reply within 2 business days</div>
-              </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="gallery-item">
+            <img src="images/gallery-2.jpeg" alt="Project 2">
+            <div class="gallery-overlay">
+              <span class="gallery-text">View Project</span>
             </div>
-          </form>
+          </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <!-- UPDATED FOOTER: dark gradient background + red hover accents -->
-  <footer class="bg-white text-slate-700 pt-10 border-t-4" style="border-color: var(--primary);">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-
-    <!-- TOP SECTION -->
-    <div class="flex flex-col md:flex-row items-center justify-between gap-8">
-
-      <!-- Logo + Description -->
-      <div class="flex items-center gap-4 text-center md:text-left">
-        <img src="images/logo.png" alt="Jatinshivshakticorporation" class="h-12 w-auto object-contain" />
-        <div>
-          <div class="font-semibold text-slate-900 text-lg">Jatinshivshakticorporation</div>
-          <div class="text-sm text-slate-600">
-            Tender-based electrical contracting • Underground & IT-line services
+        <div class="col-md-6 col-lg-3">
+          <div class="gallery-item">
+            <img src="images/gallery-3.jpeg" alt="Project 3">
+            <div class="gallery-overlay">
+              <span class="gallery-text">View Project</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="gallery-item">
+            <img src="images/gallery-4.jpeg" alt="Project 4">
+            <div class="gallery-overlay">
+              <span class="gallery-text">View Project</span>
+            </div>
           </div>
         </div>
       </div>
-
-      <!-- Menu -->
-      <div class="flex flex-wrap justify-center gap-6 text-sm">
-        <a href="#services" class="text-slate-600 hover:text-[var(--primary)] transition">Services</a>
-        <a href="#portfolio" class="text-slate-600 hover:text-[var(--primary)] transition">Portfolio</a>
-        <a href="#about" class="text-slate-600 hover:text-[var(--primary)] transition">About</a>
-        <a href="#contact" class="text-slate-600 hover:text-[var(--primary)] transition">Contact</a>
-      </div>
-
-      <!-- Contact details -->
-      <div class="text-center md:text-right text-sm text-slate-600">
-        <div>Email: <span class="text-slate-900 font-medium">info@jatinshivshakticorporation.example</span></div>
-        <div>Phone: <span class="text-slate-900 font-medium">+91 98765 43210</span></div>
-      </div>
-
     </div>
+  </section>
 
-    <!-- Divider -->
-    <div class="mt-10 border-t border-slate-200"></div>
-
-    <!-- BOTTOM COPYRIGHT -->
-    <div class="pt-6 text-center text-sm text-slate-500">
-      © <span id="year"></span> Jatinshivshakticorporation. All rights reserved. • Designed by you
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="testimonial-section">
+    <div class="container">
+      <div class="section-title">
+        <span class="section-badge">Testimonials</span>
+        <h2>What Clients <span class="text-red">Say</span></h2>
+        <p class="section-subtitle">Real feedback from project stakeholders and site supervisors</p>
+      </div>
+      
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="testimonial-card">
+            <div class="testimonial-header">
+              <div class="testimonial-avatar">RK</div>
+              <div class="testimonial-info">
+                <h5>Ravi K.</h5>
+                <p>Site Manager, ABC Infra</p>
+              </div>
+            </div>
+            <p class="testimonial-text">
+              "Jatinshivshakticorporation handled our underground cabling project professionally. The team followed safety standards and kept the timeline tight. Highly recommended for tender work."
+            </p>
+          </div>
+        </div>
+        
+        <div class="col-lg-4">
+          <div class="testimonial-card">
+            <div class="testimonial-header">
+              <div class="testimonial-avatar">MS</div>
+              <div class="testimonial-info">
+                <h5>Meera S.</h5>
+                <p>Facility Head, TechPark</p>
+              </div>
+            </div>
+            <p class="testimonial-text">
+              "Quick response for IT-line transfer during our office renovation. Minimal downtime and clear communication throughout the project."
+            </p>
+          </div>
+        </div>
+        
+        <div class="col-lg-4">
+          <div class="testimonial-card">
+            <div class="testimonial-header">
+              <div class="testimonial-avatar">SP</div>
+              <div class="testimonial-info">
+                <h5>S. Patel</h5>
+                <p>Procurement Officer, Metro Works</p>
+              </div>
+            </div>
+            <p class="testimonial-text">
+              "Reliable partner for tender projects — provided transparent costing and delivered per specification. The maintenance support after handover was a plus."
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
+  </section>
 
-  </div>
-</footer>
+  <!-- FAQ Section -->
+  <section id="faq" class="faq-section">
+    <div class="container">
+      <div class="section-title">
+        <span class="section-badge">FAQ</span>
+        <h2>Frequently Asked <span class="text-red">Questions</span></h2>
+        <p class="section-subtitle">Answers to common questions about our services and tender work</p>
+      </div>
+      
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <div class="accordion" id="faqAccordion">
+            <div class="accordion-item mb-3">
+              <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                  What areas do you serve?
+                </button>
+              </h2>
+              <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  We operate in Surat and nearby industrial zones. For larger tender projects we can mobilize to other regions as required.
+                </div>
+              </div>
+            </div>
+            
+            <div class="accordion-item mb-3">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                  Do you handle government tenders?
+                </button>
+              </h2>
+              <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  Yes — we prepare tender documentation and bid on tender-based electrical projects following client specifications and compliance requirements.
+                </div>
+              </div>
+            </div>
+            
+            <div class="accordion-item mb-3">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                  What is your safety protocol?
+                </button>
+              </h2>
+              <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  Safety is our top priority: site PPE, permit-to-work procedures, regular tool inspections, and compliance with local electrical safety standards.
+                </div>
+              </div>
+            </div>
+            
+            <div class="accordion-item mb-3">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                  How long does a typical project take?
+                </button>
+              </h2>
+              <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  Project duration varies by scope. After a site survey we provide a timeline in the proposal. Small maintenance jobs can be completed in 1–3 days; larger underground installs depend on site conditions.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <div class="section-title">
+        <span class="section-badge">Contact Us</span>
+        <h2>Get In <span class="text-red">Touch</span></h2>
+        <p class="section-subtitle">For tenders, quotes or maintenance requests, reach out and we will respond quickly</p>
+      </div>
+      
+      <div class="row g-4">
+        <div class="col-lg-5">
+          <div class="contact-info">
+            <h3 class="mb-4">Contact Information</h3>
+            
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
+              </div>
+              <div class="contact-details">
+                <h5>Email</h5>
+                <p>jatinshivshakticorporation.in</p>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                </svg>
+              </div>
+              <div class="contact-details">
+                <h5>Phone</h5>
+                <p>+91 9724021240</p>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                </svg>
+              </div>
+              <div class="contact-details">
+                <h5>Address</h5>
+                <p>B-502, Shivalik Heights, Nr.Prince Haven, Dabholi Road, Katargam, Surat 395004</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-7">
+          <div class="contact-form">
+            <h3 class="mb-4">Send Us A Message</h3>
+            <form>
+              <div class="mb-3">
+                <input type="text" class="form-control" placeholder="Your Name" required>
+              </div>
+              <div class="mb-3">
+                <input type="email" class="form-control" placeholder="Email Address" required>
+              </div>
+              <div class="mb-3">
+                <input type="tel" class="form-control" placeholder="Phone Number" required>
+              </div>
+              <div class="mb-3">
+                <select class="form-select" required>
+                  <option value="">Service Required</option>
+                  <option>Underground Electrical Work</option>
+                  <option>IT-Line Transfer</option>
+                  <option>Maintenance / Repair</option>
+                  <option>Tender Project</option>
+                  <option>Site Survey</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <textarea class="form-control" rows="4" placeholder="Brief Project Details" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-submit">Send Request</button>
+              <p class="text-muted mt-3 text-center">We reply within 2 business days</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="footer-logo-box">
+            <span class="footer-logo-icon">
+              <img src="images/logo.png" alt="" style="width: 250px; margin-top: 4px;">
+            </span>
+          </div>
+            
+          <div class="footer-title">Jatinshivshakticorporation</div>
+          <p class="footer-subtitle">Tender-based electrical contracting • Underground & IT-line services</p>
+        </div>
+        
+        <div class="col-lg-2 col-md-6">
+          <h5 class="footer-title">Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+          </ul>
+        </div>
+        
+        <div class="col-lg-3 col-md-6">
+          <h5 class="footer-title">Services</h5>
+          <ul class="footer-links">
+            <li><a href="#services">Underground Electrical</a></li>
+            <li><a href="#services">IT-Line Transfer</a></li>
+            <li><a href="#services">Maintenance</a></li>
+            <li><a href="#services">Tender Projects</a></li>
+          </ul>
+        </div>
+        
+        <div class="col-lg-3 col-md-6">
+          <h5 class="footer-title">Contact</h5>
+          <div class="footer-contact">
+            <p>📧 jatinshivshakticorporation.in</p>
+            <p>📞 +91 9724021240</p>
+            <p>📍 Surat, Gujarat, IN</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; <span id="currentYear"></span> Jatinshivshakticorporation. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
 
-
-
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  
   <script>
-    // mobile menu
-    document.getElementById('mobile-btn').addEventListener('click', function(){
-      document.getElementById('mobile-menu').classList.toggle('hidden');
+    // Set current year
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+    
+    // Navbar scroll effect
+    window.addEventListener('scroll', function() {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
     });
-
-    // set year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // FAQ accordion logic
-    document.querySelectorAll('.faq-toggle').forEach(function(btn){
-      btn.addEventListener('click', function(){
-        var content = this.nextElementSibling;
-        var open = !content.classList.contains('hidden');
-        // close all
-        document.querySelectorAll('.faq-content').forEach(function(c){ c.classList.add('hidden'); });
-        document.querySelectorAll('.faq-toggle span:last-child').forEach(function(s){ s.textContent = '+'; });
-        if(!open){
-          content.classList.remove('hidden');
-          this.querySelector('span:last-child').textContent = '−';
+    
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          const navbarHeight = document.querySelector('.navbar').offsetHeight;
+          const targetPosition = target.offsetTop - navbarHeight;
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+          
+          // Close mobile menu if open
+          const navbarCollapse = document.querySelector('.navbar-collapse');
+          if (navbarCollapse.classList.contains('show')) {
+            bootstrap.Collapse.getInstance(navbarCollapse).hide();
+          }
         }
       });
     });
-
-    // Simple testimonial slider (vanilla JS)
-    const testimonials = [
-      { name: 'Ravi K.', title: 'Site Manager, ABC Infra', text: 'Jatinshivshakticorporation handled our underground cabling project professionally. The team followed safety standards and kept the timeline tight. Highly recommended for tender work.' },
-      { name: 'Meera S.', title: 'Facility Head, TechPark', text: 'Quick response for IT-line transfer during our office renovation. Minimal downtime and clear communication throughout the project.' },
-      { name: 'S. Patel', title: 'Procurement Officer, Metro Works', text: 'Reliable partner for tender projects — provided transparent costing and delivered per specification. The maintenance support after handover was a plus.' }
-    ];
-
-    let cur = 0;
-    const wrap = document.getElementById('testimonial-wrap');
-    function renderTestimonial(i){
-      wrap.innerHTML = '';
-      const t = testimonials[i];
-      const card = document.createElement('div');
-      card.className = 'p-6 bg-white rounded-xl shadow slide-enter';
-      card.innerHTML = `
-        <div class="flex items-center gap-4">
-          <div class="w-12 h-12 rounded-full bg-[var(--primary)] text-white flex items-center justify-center font-semibold">${t.name.split(' ').map(n=>n[0]).join('').slice(0,2)}</div>
-          <div>
-            <div class="font-semibold">${t.name}</div>
-            <div class="text-xs text-slate-500">${t.title}</div>
-          </div>
-        </div>
-        <p class="mt-4 text-slate-700">${t.text}</p>
-      `;
-      wrap.appendChild(card);
-    }
-
-    function showNext(){
-      cur = (cur + 1) % testimonials.length; renderTestimonial(cur);
-    }
-    function showPrev(){
-      cur = (cur - 1 + testimonials.length) % testimonials.length; renderTestimonial(cur);
-    }
-
-    document.getElementById('next').addEventListener('click', showNext);
-    document.getElementById('prev').addEventListener('click', showPrev);
-
-    // initial
-    renderTestimonial(cur);
-    // auto-rotate
-    setInterval(showNext, 6000);
   </script>
 </body>
 </html>
