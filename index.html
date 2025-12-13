@@ -183,11 +183,16 @@
     
     .hero-image-box {
       position: relative;
+
       z-index: 2;
     }
     
     .hero-image {
       width: 100%;
+      max-width: 420px;      
+      max-height: 520px;
+      object-fit: cover;
+
       border-radius: 20px;
       box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
       transition: transform 0.5s ease;
@@ -338,6 +343,9 @@
     
     .about-image {
       width: 100%;
+       max-width: 520px;     
+      max-height: 620px;
+      object-fit: cover;
       border-radius: 15px;
       box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
     }
@@ -762,7 +770,7 @@
   <section id="home" class="hero-section">
     <div class="container">
       <div class="row align-items-center">
-        <div class="col-lg-6 hero-content">
+        <div class="col-lg-7 hero-content">
           <span class="hero-badge">● Premium Electrical Solutions</span>
           <h1 class="hero-title">
             Power Your <br><span class="highlight">Future</span>
@@ -776,7 +784,7 @@
           </div>
         </div>
         
-        <div class="col-lg-6 hero-image-box">
+        <div class="col-lg-4 hero-image-box">
           <img src="images/350a65e6-9401-4ce8-b259-7183575926d5.png" alt="Electrical Work" class="hero-image">
         </div>
       </div>
